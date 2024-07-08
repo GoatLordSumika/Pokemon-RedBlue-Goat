@@ -17,22 +17,12 @@ Route4ResetScript:
 
 Route4_ScriptPointers:
 	def_script_pointers
-;	dw_const CheckFightingMapTrainers,              SCRIPT_ROUTE4_DEFAULT
-	dw_const Route4DefaultScript,	                SCRIPT_ROUTE4_DEFAULT
+	dw_const CheckFightingMapTrainers,              SCRIPT_ROUTE4_DEFAULT
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_ROUTE4_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_ROUTE4_END_BATTLE
 	dw_const Route4GoatlordBeginBattleScript,		SCRIPT_ROUTE4_GOATLORD_BEGIN_BATTLE
 	dw_const Route4GoatlordDefeatedScript,			SCRIPT_ROUTE4_GOATLORD_DEFEATED
 	dw_const Route4GoatlordLeavesScript,			SCRIPT_ROUTE4_GOATLORD_LEAVES
-
-Route4DefaultScript:
-	CheckEvent EVENT_BEAT_ROUTE_4_GOATLORD
-	jp nz, CheckFightingMapTrainers
-	jp CheckFightingMapTrainers
-	ld a, SCRIPT_ROUTE4_DEFAULT
-	ld [wRoute4CurScript], a
-	ld [wCurMapScript], a
-	ret
 
 Route4GoatlordBeginBattleScript:
 	ld hl, wd72d
