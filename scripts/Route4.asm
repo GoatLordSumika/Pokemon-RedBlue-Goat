@@ -97,7 +97,7 @@ Route4_TextPointers:
 	dw_const Route4SignText,          TEXT_ROUTE4_SIGN
 
 Route4TrainerHeaders:
-	def_trainers 2
+	def_trainers 3
 Route4TrainerHeader0:
 	trainer EVENT_BEAT_ROUTE_4_TRAINER_0, 3, Route4CooltrainerF2BattleText, Route4CooltrainerF2EndBattleText, Route4CooltrainerF2AfterBattleText
 	db -1 ; end

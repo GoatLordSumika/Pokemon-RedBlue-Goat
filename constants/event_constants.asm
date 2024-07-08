@@ -243,8 +243,8 @@
 ; Route 4 events
 	const_next $3F0
 	const_skip 2
-	const EVENT_BEAT_ROUTE_4_TRAINER_0
 	const EVENT_BEAT_ROUTE_4_GOATLORD			; Custom Route 4 event
+	const EVENT_BEAT_ROUTE_4_TRAINER_0
 	const_skip 11
 	const EVENT_BOUGHT_MAGIKARP
 
