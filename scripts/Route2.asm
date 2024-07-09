@@ -46,7 +46,7 @@ Route2DefaultScript:
 
 Route2GoatlordEncounterEventCoords:
 	dbmapcoord 3, 9
-	db $0F
+	db -1 ; end
 
 Route2GoatlordMovesToPlayerScript:
 	ld de, Route2GoatlordArrivesMovement

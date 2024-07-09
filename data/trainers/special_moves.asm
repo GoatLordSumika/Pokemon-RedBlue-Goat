@@ -62,6 +62,36 @@ SpecialTrainerMoves:
 	db 1, 2, POISON_STING
 	db 0
 
+	;Route 6
+	db BUG_CATCHER, 10
+	db 1, 3, MEGA_DRAIN
+	db 2, 3, SUPERSONIC
+	db 2, 4, MEGA_DRAIN
+	db 3, 2, POISON_STING
+	db 0
+
+	db BUG_CATCHER, 11
+	db 1,3, MEGA_DRAIN
+	db 0
+
+	;Route 11
+	db GAMBLER, 1
+	db 1, 3, WATER_GUN
+	db 2, 1, WATER_GUN
+	db 0
+
+	db GAMBLER, 2
+	db 1, 1, VINE_WHIP
+	db 1, 3, TOXIC
+	db 2, 2, TOXIC
+	db 0
+
+	db GAMBLER, 3
+	db 1, 4, THUNDER_WAVE
+	db 2, 2, THUNDER_WAVE
+	db 2, 3, FLASH
+	db 0
+
 	db BROCK, 1
 	db 2, 3, BIDE
 	db 0

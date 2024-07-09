@@ -67,16 +67,16 @@ YoungsterData:
 ; Route 24
 	db 17, RATTATA, EKANS, 0
 ; Route 25
-	db 16, NIDORAN_M, SPEAROW, 0
-	db 18, SLOWPOKE, 0
-	db 16, EKANS, SANDSHREW, 0
+	db $FF, 15, NIDORAN_M, 18, SPEAROW, 0
+	db 19, SLOWPOKE, 0
+	db 17, EKANS, SANDSHREW, 0
 ; SS Anne 1F Rooms
 	db 21, NIDORAN_M, 0
 ; Route 11
 	db 21, EKANS, 0
-	db 19, SANDSHREW, ZUBAT, 0
-	db 17, RATTATA, RATTATA, RATICATE, 0
-	db 18, NIDORAN_M, NIDORINO, 0
+	db 19, SANDSHREW, NIDORINA, 0
+	db $FF, 16, RATTATA, 17, DIGLETT, 18, PIDGEOTTO, 0
+	db 18, DROWZEE, NIDORINO, 0
 ; Unused
 	db 17, SPEAROW, RATTATA, RATTATA, SPEAROW, 0
 
@@ -95,7 +95,7 @@ BugCatcherData:
 ; Route 24
 	db 14, BEEDRILL, BUTTERFREE, 0
 ; Route 6
-	db 16, WEEDLE, CATERPIE, WEEDLE, 0
+	db 16, PARAS, VENONAT, BEEDRILL, 0
 	db 20, BUTTERFREE, 0
 ; Unused
 	db 18, METAPOD, CATERPIE, VENONAT, 0
@@ -115,10 +115,10 @@ LassData:
 	db 14, CLEFAIRY, 0
 ; Route 24
 	db 16, PIDGEY, CLEFAIRY, 0
-	db 14, MEOWTH, NIDORAN_F, 0
+	db 15, MEOWTH, NIDORAN_F, 0
 ; Route 25
-	db 16, NIDORAN_M, NIDORAN_F, 0
-	db 15, ODDISH, PIDGEY, JIGGLYPUFF, 0
+	db 19, NIDORAN_M, NIDORAN_F, 0
+	db 17, ODDISH, PIDGEY, JIGGLYPUFF, 0
 ; SS Anne 1F Rooms
 	db 18, PIDGEY, NIDORAN_F, 0
 ; SS Anne 2F Rooms
@@ -149,12 +149,12 @@ JrTrainerMData:
 ; Pewter Gym
 	db 11, DIGLETT, SANDSHREW, 0
 ; Route 24/Route 25
-	db $FF, 15, CHARMANDER, 17, EKANS, 0
+	db $FF, 15, CHARMANDER, 18, EKANS, 0
 ; Route 24
 	db 18, MANKEY, 0
 ; Route 6
-	db 20, SQUIRTLE, 0
-	db 16, SPEAROW, RATICATE, 0
+	db $FF, 15, SQUIRTLE, 18, DIGLETT, 0
+	db 20, RATICATE, 0
 ; Unused
 	db 18, DIGLETT, DIGLETT, SANDSHREW, 0
 ; Route 9
@@ -165,10 +165,10 @@ JrTrainerMData:
 
 JrTrainerFData:
 ; Cerulean Gym
-	db 19, GOLDEEN, 0
+	db 20, GOLDEEN, 0
 ; Route 6
-	db 16, RATTATA, PIKACHU, 0
-	db 16, PIDGEY, PIDGEY, PIDGEY, 0
+	db 16, PIKACHU, CUBONE, 0
+	db $FF, 15, BULBASAUR, 16, PIDGEY, 18, JIGGLYPUFF, 0
 ; Unused
 	db 22, BULBASAUR, 0
 ; Route 9
@@ -237,9 +237,9 @@ HikerData:
 ; Mt. Moon 1F
 	db 11, GEODUDE, ONIX, GEODUDE, 0
 ; Route 25
-	db 16, MACHOP, GEODUDE, 0
+	db 17, MACHOP, GEODUDE, 0
 	db $FF, 13, CUBONE, 14, MACHOP, 15, MANKEY, 16, GEODUDE, 0
-	db 17, ONIX, 0
+	db 19, ONIX, 0
 ; Route 9
 	db 21, GEODUDE, ONIX, 0
 	db 20, GEODUDE, MACHOP, GEODUDE, 0
@@ -308,7 +308,7 @@ EngineerData:
 	db 21, VOLTORB, MAGNEMITE, 0
 ; Route 11
 	db 21, MAGNEMITE, 0
-	db 18, MAGNEMITE, MAGNEMITE, MAGNETON, 0
+	db 19, MAGNEMITE, VOLTORB, 0
 
 GoatlordData:
 ; Route 2
@@ -316,8 +316,8 @@ GoatlordData:
 ; Route 4
 	db $FF, 9, PIDGEY, 10, NIDORAN_F, 11, RATTATA, 12, BUTTERFREE, 13, BULBASAUR, 0
 ;Cerulean City - Final Battle
-	db 10, MEW, 0
-;	db $FF, 66, STARMIE, 67, TAUROS, 68, VENUSAUR, 69, ALAKAZAM, 70, ZAPDOS, 70, MEW, 0
+;	db 10, MEW, 0
+	db $FF, 66, STARMIE, 67, TAUROS, 68, VENUSAUR, 69, ALAKAZAM, 70, ZAPDOS, 70, MEW, 0
 
 FisherData:
 ; SS Anne 2F Rooms
@@ -339,7 +339,7 @@ FisherData:
 
 SwimmerData:
 ; Cerulean Gym
-	db 17, HORSEA, SHELLDER, 0
+	db 18, HORSEA, SHELLDER, 0
 ; Route 19
 	db 30, TENTACOOL, SHELLDER, 0
 	db 29, GOLDEEN, HORSEA, STARYU, 0
@@ -554,7 +554,7 @@ RocketData:
 	db 13, ZUBAT, EKANS, 0
 	db 16, RATICATE, 0
 ; Cerulean City
-	db 17, MACHOP, DROWZEE, 0
+	db $FF, 17, DROWZEE, 20, MACHOP, 0
 ; Route 24
 	db 18, ZUBAT, EKANS, 0
 ; Game Corner
