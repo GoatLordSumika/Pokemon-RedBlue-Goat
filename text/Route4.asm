@@ -42,7 +42,7 @@ _Route4GoatlordAfterBattleText::
 	cont "true power."
 
 	para "Do you have the"
-	line "will to sieze"
+	line "will to seize"
 	cont "such power?"
 
 	para "Or will you be"

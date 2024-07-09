@@ -54,7 +54,10 @@
 ; Cerulean City events
 	const_next $98
 	const EVENT_BEAT_CERULEAN_RIVAL
-	const_skip 14
+	const EVENT_BEAT_CHAMPION
+	const EVENT_BEAT_CERULEAN_GOATLORD
+	const EVENT_RECEIVED_MEW
+	const_skip 11
 	const EVENT_BEAT_CERULEAN_ROCKET_THIEF
 	const_skip 18
 	const EVENT_BEAT_CERULEAN_GYM_TRAINER_0

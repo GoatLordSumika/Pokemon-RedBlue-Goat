@@ -34,8 +34,9 @@ _Route2GoatlordDefeatedText::
 	prompt
 
 _Route2GoatlordVictoryText::
-	text "What a waste"
-	line "of my time!"
+	text "What"
+	line "a waste of"
+	cont "my time!"
 	prompt
 
 _Route2GoatlordAfterBattleText::
@@ -60,8 +61,9 @@ _Route2GoatlordAfterBattleText::
 	
 	para "Move along now"
 	line "TRAINER."
-	cont "We will be"
-	cont "watching you!"
+	
+	para "We will be"
+	line "watching you!"
 	done
 
 _Route2GoatlordRejectedBattleText::
@@ -75,7 +77,7 @@ _Route2GoatlordRejectedBattleText::
 	para "Train your"
 	line "#MON well"
 	cont "and let them rest"
-	cont "if needed"
+	cont "if needed."
 
 	para "I will be here" 
 	line "waiting..."

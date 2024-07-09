@@ -14,11 +14,13 @@ CeruleanCityClearScripts:
 
 CeruleanCity_ScriptPointers:
 	def_script_pointers
-	dw_const CeruleanCityDefaultScript,        SCRIPT_CERULEANCITY_DEFAULT
-	dw_const CeruleanCityRivalBattleScript,    SCRIPT_CERULEANCITY_RIVAL_BATTLE
-	dw_const CeruleanCityRivalDefeatedScript,  SCRIPT_CERULEANCITY_RIVAL_DEFEATED
-	dw_const CeruleanCityRivalCleanupScript,   SCRIPT_CERULEANCITY_RIVAL_CLEANUP
-	dw_const CeruleanCityRocketDefeatedScript, SCRIPT_CERULEANCITY_ROCKET_DEFEATED
+	dw_const CeruleanCityDefaultScript,        		SCRIPT_CERULEANCITY_DEFAULT
+	dw_const CeruleanCityRivalBattleScript,    		SCRIPT_CERULEANCITY_RIVAL_BATTLE
+	dw_const CeruleanCityRivalDefeatedScript,  		SCRIPT_CERULEANCITY_RIVAL_DEFEATED
+	dw_const CeruleanCityRivalCleanupScript,   		SCRIPT_CERULEANCITY_RIVAL_CLEANUP
+	dw_const CeruleanCityRocketDefeatedScript, 		SCRIPT_CERULEANCITY_ROCKET_DEFEATED
+	dw_const CeruleanCityGoatlordBeginBattleScript,	SCRIPT_CERULEANCITY_GOATLORD_BEGIN_BATTLE
+	dw_const CeruleanCityGoatlordDefeatedScript,	SCRIPT_CERULEANCITY_GOATLORD_DEFEATED
 
 CeruleanCityRocketDefeatedScript:
 	ld a, [wIsInBattle]
@@ -232,8 +234,41 @@ CeruleanCityRivalCleanupScript:
 	ld [wCeruleanCityCurScript], a
 	ret
 
+CeruleanCityGoatlordBeginBattleScript:
+	SetEvent EVENT_SET_FINAL_BATTLE_MUSIC
+	ld hl, wd72d
+	set 6, [hl]
+	set 7, [hl]
+	ld hl, CeruleanCityGoatlordBattleDefeatedText
+	ld de, CeruleanCityGoatlordBattleVictoryText
+	call SaveEndBattleTextPointers
+	ld a, OPP_GOATLORD
+	ld [wCurOpponent], a
+	ld a, $3
+	ld [wTrainerNo], a
+	xor a
+	ldh [hJoyHeld], a
+	ld a, SCRIPT_CERULEANCITY_GOATLORD_DEFEATED
+	ld [wCeruleanCityCurScript], a 
+	ret
+
+CeruleanCityGoatlordDefeatedScript:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, Route4ResetScript
+	SetEvent EVENT_BEAT_CERULEAN_GOATLORD
+	ld a, TEXT_CERULEANCITY_GOATLORD
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_CERULEANCITY_DEFAULT
+	ld [wCeruleanCityCurScript], a
+	ret
+
 CeruleanCity_TextPointers:
 	def_text_pointers
+	dw_const CeruleanCityGoatlordText,		TEXT_CERULEANCITY_GOATLORD
 	dw_const CeruleanCityRivalText,         TEXT_CERULEANCITY_RIVAL
 	dw_const CeruleanCityRocketText,        TEXT_CERULEANCITY_ROCKET
 	dw_const CeruleanCityCooltrainerMText,  TEXT_CERULEANCITY_COOLTRAINER_M
@@ -357,6 +392,71 @@ CeruleanCitySuperNerd2Text:
 
 CeruleanCityGuardText:
 	text_far _CeruleanCityGuardText
+	text_end
+
+CeruleanCityGoatlordText:
+	text_asm
+	CheckEvent EVENT_RECEIVED_MEW
+	jr nz, .ReceivedMew
+	CheckEvent EVENT_BEAT_CERULEAN_GOATLORD
+	jr nz, .GoatlordDefeated
+	CheckEvent EVENT_BEAT_MEWTWO
+	jr nz, .MewtwoDefeated
+	CheckEvent EVENT_BEAT_CHAMPION
+	jr nz, .PlayerIsChampion
+	ld hl, CeruleanCityGoatlordDefaultText
+	call PrintText
+	jr .done
+.PlayerIsChampion
+	ld hl, CeruleanCityGoatlordMewtwoNotBeatText
+	call PrintText
+	jr .done
+.MewtwoDefeated
+	ld hl, CeruleanCityGoatlordBeforeBattleText
+	call PrintText
+	ld a, SCRIPT_CERULEANCITY_GOATLORD_BEGIN_BATTLE
+	ld [wCeruleanCityCurScript], a
+	jr .done
+.GoatlordDefeated
+	ld hl, CeruleanCityGoatlordDefeatedText
+	call PrintText
+	lb bc, MEW, 60
+	call GivePokemon
+	jr nc, .done
+	SetEvent EVENT_RECEIVED_MEW
+	jr .done
+.ReceivedMew
+	ld hl, CeruleanCityGoatlordEndText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+CeruleanCityGoatlordDefaultText:
+	text_far _CeruleanCityGoatlordDefaultText
+	text_end
+
+CeruleanCityGoatlordMewtwoNotBeatText:
+	text_far _CeruleanCityGoatlordMewtwoNotBeatText
+	text_end
+
+CeruleanCityGoatlordBeforeBattleText:
+	text_far _CeruleanCityGoatlordBeforeBattleText
+	text_end
+
+CeruleanCityGoatlordBattleDefeatedText:
+	text_far _CeruleanCityGoatlordBattleDefeatedText
+	text_end
+
+CeruleanCityGoatlordBattleVictoryText:
+	text_far _CeruleanCityGoatlordBattleVictoryText
+	text_end
+
+CeruleanCityGoatlordDefeatedText:
+	text_far _CeruleanCityGoatlordDefeatedText
+	text_end
+
+CeruleanCityGoatlordEndText:
+	text_far _CeruleanCityGoatlordEndText
 	text_end
 
 CeruleanCityCooltrainerF1Text:

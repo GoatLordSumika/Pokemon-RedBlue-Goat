@@ -203,6 +203,172 @@ _CeruleanCitySuperNerd3Text::
 	cont "is allowed in!"
 	done
 
+_CeruleanCityGoatlordDefaultText::
+	text "I have seen many"
+	line "people forsake a"
+	cont "bright future by"
+	cont "giving up"
+	cont "everything in"
+	cont "a bid to"
+	cont "challenge the"
+	cont "#MON LEAGUE."
+
+	para "Although all of"
+	line "them thought"
+	cont "they would be"
+	cont "the next"
+	cont "CHAMPION, most"
+	cont "of them were"
+	cont "doomed to fail"
+	cont "before they had"
+	cont "even begun."
+
+	para "Are you another"
+	line "such fool?"
+	
+	para "Or something"
+	line "more?"
+	done 
+
+_CeruleanCityGoatlordMewtwoNotBeatText::
+	text "<PLAYER>..."
+	line "Or should I call"
+	cont "you CHAMPION?"
+
+	para "Many trainers"
+	line "have earned the"
+	cont "title of"
+	cont "CHAMPION through"
+	cont "the years."
+
+	para "Yet even among"
+	line "CHAMPIONs there"
+	cont "are those that"
+	cont "stand out."
+
+	para "<RIVAL>"
+	line "managed to"
+	cont "become CHAMPION,"
+	cont "but he could"
+	cont "never hope to"
+	cont "challenge me."
+
+	para "But I can see"
+	line "it in your eyes."
+
+	para "Even now at the"
+	line "very top, you"
+	cont "hunger for more."
+
+	para "Seek strength!"
+	line "Seek the"
+	cont "mightiest"
+	cont "creature!"
+
+	para "The rest will"
+	line "follow..."
+	done
+
+_CeruleanCityGoatlordBeforeBattleText::
+	text "<PLAYER>."
+	line "CHAMPION."
+	cont "There are no more"
+	cont "tasks or quests."
+	cont "No more errands."
+
+	para "The only thing"
+	line "left is to fight!"
+
+	para "So come then,"
+	line "CHAMPION!"
+	cont "FEED ME YOUR"
+	cont "RAGE!"
+	done
+
+_CeruleanCityGoatlordBattleDefeatedText::
+	text "I can't"
+	line "believe it!"
+	cont "You actually"
+	cont "beat me!?"
+	prompt
+
+_CeruleanCityGoatlordBattleVictoryText::
+	text "I had"
+	line "such high hopes"
+	cont "for you..."
+
+	para "But you're just"
+	line "another failure!"
+	prompt
+
+_CeruleanCityGoatlordDefeatedText::
+	text "..."
+	line "INCREDIBLE!"
+
+	para "It's been a"
+	line "long time since"
+	cont "I had a battle"
+	cont "this exciting!"
+
+	para "For this"
+	line "amazing"
+	cont "achievement,"
+	cont "you deserve"
+	cont "something truly"
+	cont "special!"
+
+	para "I present to"
+	line "you GOGOAT!"
+
+	para "It's a goat"
+	line "#MON!"
+	cont "The ultimate"
+	cont "#MON!"
+
+	para "I don't think"
+	line "I can imagine a"
+	cont "better reward!"
+
+	para "Except..."
+	line "This world"
+	cont "doesn't seem to"
+	cont "handle #MON"
+	cont "beyond no. 151"
+	cont "very well."
+
+	para "Last time I"
+	line "tried to summon"
+	cont "a GOGOAT, it"
+	cont "turned into"
+	cont "something weird"
+	cont "that ended up"
+	cont "tearing the"
+	cont "space-time"
+	cont "continuum apart!"
+
+	para "It took me the"
+	line "ENTIRE WEEK"
+	cont "to fix!"
+
+	para "So I don't do"
+	line "that anymore."
+	cont "I'm sorry!"
+
+	para "Still, you"
+	line "need something."
+
+	para "It's not nearly"
+	line "as nice as a"
+	cont "goat, but it"
+	cont "will have to"
+	cont "be enough."
+	prompt
+
+_CeruleanCityGoatlordEndText::
+	text "I need a"
+	line "vacation!"
+	done
+
 _CeruleanCitySignText::
 	text "CERULEAN CITY"
 	line "A Mysterious,"

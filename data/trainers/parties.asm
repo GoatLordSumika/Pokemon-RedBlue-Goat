@@ -315,6 +315,9 @@ GoatlordData:
 	db $FF, 7, PIDGEY, 7, BULBASAUR, 10, BUTTERFREE, 0
 ; Route 4
 	db $FF, 9, PIDGEY, 10, NIDORAN_F, 11, RATTATA, 12, BUTTERFREE, 13, BULBASAUR, 0
+;Cerulean City - Final Battle
+	db 10, MEW, 0
+;	db $FF, 66, STARMIE, 67, TAUROS, 68, VENUSAUR, 69, ALAKAZAM, 70, ZAPDOS, 70, MEW, 0
 
 FisherData:
 ; SS Anne 2F Rooms
