@@ -50,3 +50,72 @@ _SSAnneBowSailor3AfterBattleText::
 	cont "#MON. I think"
 	cont "there are more."
 	done
+
+_SSAnneBowGoatlordEmbarrassedText::
+	text "GOATLORD SUMIKA:"
+	line "Oh! It's you!"
+
+	para "..."
+
+	para "..."
+
+	para "..."
+
+	para "Well, this is"
+	line "embarrassing."
+
+	para "I was going to"
+	line "challenge you to"
+	cont "a fight, but..."
+
+	para "They had this big"
+	line "party here last"
+	cont "night and the"
+	cont "food was really"
+	cont "good..."
+
+	para "I might have"
+	line "eaten too much."
+
+	para "I feel sluggish"
+	line "and definitely"
+	cont "not up for a"
+	cont "battle."
+
+	para "..."
+
+	para "What's with that"
+	line "look!?"
+
+	para "Even GOATLORDs"
+	line "have to eat you"
+	cont "know!"
+
+	para "I'll make you a"
+	line "deal!"
+	
+	para "You leave me"
+	line "alone now and"
+	cont "I'll give you"
+	cont "something nice."
+
+	para "Come find me in"
+	line "CELADON CITY."
+
+	para "I'll have"
+	line "something for"
+	cont "you then."
+	done
+
+_SSAnneBowGoatlordPassiveText::
+	text "I love watching"
+	line "the city from"
+	cont "here."
+
+	para "Especially in the"
+	line "evening when all"
+	cont "the lights are"
+	cont "on."
+	done
+	
+;	line "_________________X"

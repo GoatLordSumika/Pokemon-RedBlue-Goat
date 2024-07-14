@@ -1,6 +1,7 @@
 	object_const_def
 	const_export POKEMONTOWER2F_RIVAL
 	const_export POKEMONTOWER2F_CHANNELER
+	const_export POKEMONTOWER2F_GOATLORD
 
 PokemonTower2F_Object:
 	db $1 ; border block
@@ -14,5 +15,6 @@ PokemonTower2F_Object:
 	def_object_events
 	object_event 14,  5, SPRITE_BLUE, STAY, NONE, TEXT_POKEMONTOWER2F_RIVAL
 	object_event  3,  7, SPRITE_CHANNELER, STAY, RIGHT, TEXT_POKEMONTOWER2F_CHANNELER
+	object_event 10,  8, SPRITE_COOLTRAINER_F, STAY, LEFT, TEXT_POKEMONTOWER2F_GOATLORD
 
 	def_warps_to POKEMON_TOWER_2F

@@ -99,6 +99,73 @@ _Route10CooltrainerF2AfterBattleText::
 	cont "floral pattern!"
 	done
 
+_Route10GoatlordBeforeBattleText::
+	text "I see you've made"
+	line "it this far."
+
+	para "But are you ready"
+	line "for ROCK TUNNEL?"
+
+	para "Better trainers"
+	line "than you have"
+	cont "failed to pass"
+	cont "through the"
+	cont "absolute darkness"
+	cont "inside."
+
+	para "Alright! If"
+	line "you're certain,"
+	cont "then prove it to"
+	cont "me!"
+	done
+
+_Route10GoatlordDefeatedText::
+	text "Not"
+	line "goat enough..."
+	prompt
+
+_Route10GoatlordVictoryText::
+	text "What"
+	line "a waste of"
+	cont "my time!"
+	prompt
+
+_Route10GoatlordAfterBattleText::
+	text "How far will you"
+	line "make it, I"
+	cont "wonder."
+
+	para "You certainly"
+	line "don't lack"
+	cont "determination,"
+	cont "but that alone is"
+	cont "not enough."
+
+	para "What is your"
+	line "name?"
+
+	para "..."
+
+	para "<PLAYER>?"
+
+	para "What a weird"
+	line "name..."
+
+	para "<PLAYER>. You"
+	line "have earned the"
+	cont "right to pass"
+	cont "through ROCK"
+	cont "TUNNEL."
+
+	para "Be warned!"
+	line "The next time we"
+	cont "meet, I shall"
+	cont "require much more"
+	cont "from you!"
+	done
+
+;	line "_________________X"
+
 _Route10RockTunnelSignText::
 	text "ROCK TUNNEL"
 	done

@@ -131,6 +131,7 @@ PokemonTower2F_TextPointers:
 	def_text_pointers
 	dw_const PokemonTower2FRivalText,     TEXT_POKEMONTOWER2F_RIVAL
 	dw_const PokemonTower2FChannelerText, TEXT_POKEMONTOWER2F_CHANNELER
+	dw_const PokemonTower2FGoatlordText,  TEXT_POKEMONTOWER2F_GOATLORD
 
 PokemonTower2FRivalText:
 	text_asm
@@ -191,4 +192,8 @@ PokemonTower2FRivalText:
 
 PokemonTower2FChannelerText:
 	text_far _PokemonTower2FChannelerText
+	text_end
+
+PokemonTower2FGoatlordText:
+	text_far _PokemonTower2FGoatlordText
 	text_end

@@ -7,11 +7,141 @@ Route10_Script:
 	ld [wRoute10CurScript], a
 	ret
 
+Route10ResetScript:
+	xor a
+	ld [wJoyIgnore], a
+	ld [wRoute10CurScript], a
+	ld [wCurMapScript], a
+	ret
+
 Route10_ScriptPointers:
 	def_script_pointers
-	dw_const CheckFightingMapTrainers,              SCRIPT_ROUTE10_DEFAULT
+;	dw_const CheckFightingMapTrainers,              SCRIPT_ROUTE10_DEFAULT
+	dw_const Route10DefaultScript,                  SCRIPT_ROUTE10_DEFAULT
 	dw_const DisplayEnemyTrainerTextAndStartBattle, SCRIPT_ROUTE10_START_BATTLE
 	dw_const EndTrainerBattle,                      SCRIPT_ROUTE10_END_BATTLE
+	dw_const Route10GoatlordBeforeBattle,           SCRIPT_ROUTE10_GOATLORD_BEFORE_BATTLE
+	dw_const Route10GoatlordAfterBattle,            SCRIPT_ROUTE10_GOATLORD_AFTER_BATTLE
+	dw_const Route10GoatlordLeavesScript,           SCRIPT_ROUTE10_GOATLORD_LEAVES
+
+Route10DefaultScript:
+	CheckEvent EVENT_BEAT_ROUTE_10_GOATLORD
+	jr nz, .checkTrainers
+	ld a, HS_ROUTE_10_GOATLORD
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	ld hl, Route10GoatlordEncounterEventCoords
+	call ArePlayerCoordsInArray
+	jp nc, .checkTrainers
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	ld a, SFX_STOP_ALL_MUSIC
+	ld [wNewSoundID], a
+	call PlaySound
+	ld c, BANK(Music_IndigoPlateau)
+	ld a, MUSIC_INDIGO_PLATEAU
+	call PlayMusic
+	ld a, HS_ROUTE_10_GOATLORD
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ld de, Route10GoatlordArrivesMovement
+	ld a, ROUTE10_GOATLORD
+	ldh [hSpriteIndex], a
+	call MoveSprite
+	ld a, SCRIPT_ROUTE10_GOATLORD_BEFORE_BATTLE
+	ld [wRoute10CurScript], a
+	ld [wCurMapScript], a
+	ret
+.checkTrainers
+	jp nc, CheckFightingMapTrainers
+	ld a, SCRIPT_ROUTE10_DEFAULT
+	ld [wRoute10CurScript], a
+	ld [wCurMapScript], a
+	ret
+
+Route10GoatlordBeforeBattle:
+	ld a, [wd730]
+	bit 0, a
+	ret nz
+	ld a, SPRITE_FACING_LEFT
+	ld [wSpritePlayerStateData1FacingDirection], a
+	xor a
+	ld [wJoyIgnore], a
+	ld a, TEXT_ROUTE10_GOATLORD
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
+	ld hl, wd72d
+	set 6, [hl]
+	set 7, [hl]
+	ld hl, Route10GoatlordDefeatedText
+	ld de, Route10GoatlordVictoryText
+	call SaveEndBattleTextPointers
+	ld a, OPP_GOATLORD
+	ld [wCurOpponent], a
+	ld a, $3
+	ld [wTrainerNo], a
+	xor a
+	ldh [hJoyHeld], a
+	ld a, SCRIPT_ROUTE10_GOATLORD_AFTER_BATTLE
+	ld [wRoute10CurScript], a
+	ld [wCurMapScript], a
+	ret
+
+Route10GoatlordAfterBattle:
+	ld a, [wIsInBattle]
+	cp $ff
+	jp z, Route10ResetScript
+	ld a, D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
+	SetEvent EVENT_BEAT_ROUTE_10_GOATLORD
+	ld a, SFX_STOP_ALL_MUSIC
+	ld [wNewSoundID], a
+	call PlaySound
+	ld c, BANK(Music_IndigoPlateau)
+	ld a, MUSIC_INDIGO_PLATEAU
+	call PlayMusic
+	ld a, TEXT_ROUTE10_GOATLORD
+	ldh [hSpriteIndexOrTextID], a
+	call DisplayTextID
+	ld de, Route10GoatlordLeavesMovement
+	ld a, ROUTE10_GOATLORD
+	ldh [hSpriteIndex], a
+	call MoveSprite
+	ld a, SCRIPT_ROUTE10_GOATLORD_LEAVES
+	ld [wRoute10CurScript], a
+	ld [wCurMapScript], a
+	ret
+
+Route10GoatlordLeavesScript:
+	ld a, [wd730]
+	bit 0, a
+	ret nz
+	ld a, HS_ROUTE_10_GOATLORD
+	ld [wMissableObjectIndex], a
+	predef HideObject
+	call PlayDefaultMusic
+	xor a
+	ld [wJoyIgnore], a
+	ld a, SCRIPT_ROUTE10_DEFAULT
+	ld [wRoute10CurScript], a
+	ld [wCurMapScript], a
+	ret
+
+Route10GoatlordEncounterEventCoords:
+	dbmapcoord 8, 18
+	db -1 ; end
+
+Route10GoatlordArrivesMovement:
+	db NPC_MOVEMENT_RIGHT
+	db NPC_MOVEMENT_RIGHT
+	db NPC_MOVEMENT_RIGHT
+	db -1 ; end
+
+Route10GoatlordLeavesMovement:
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_LEFT
+	db NPC_MOVEMENT_LEFT
+	db -1 ; end
 
 Route10_TextPointers:
 	def_text_pointers
@@ -21,6 +151,7 @@ Route10_TextPointers:
 	dw_const Route10CooltrainerF1Text,  TEXT_ROUTE10_COOLTRAINER_F1
 	dw_const Route10Hiker2Text,         TEXT_ROUTE10_HIKER2
 	dw_const Route10CooltrainerF2Text,  TEXT_ROUTE10_COOLTRAINER_F2
+	dw_const Route10GoatlordText,       TEXT_ROUTE10_GOATLORD
 	dw_const Route10RockTunnelSignText, TEXT_ROUTE10_ROCKTUNNEL_NORTH_SIGN
 	dw_const PokeCenterSignText,        TEXT_ROUTE10_POKECENTER_SIGN
 	dw_const Route10RockTunnelSignText, TEXT_ROUTE10_ROCKTUNNEL_SOUTH_SIGN
@@ -148,6 +279,35 @@ Route10CooltrainerF2EndBattleText:
 
 Route10CooltrainerF2AfterBattleText:
 	text_far _Route10CooltrainerF2AfterBattleText
+	text_end
+
+Route10GoatlordText:
+	text_asm
+	CheckEvent EVENT_BEAT_ROUTE_10_GOATLORD
+	jr nz, .afterBattle
+	ld hl, Route10GoatlordBeforeBattleText
+	call PrintText
+	jr .done
+.afterBattle
+	ld hl, Route10GoatlordAfterBattleText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+Route10GoatlordBeforeBattleText:
+	text_far _Route10GoatlordBeforeBattleText
+	text_end
+
+Route10GoatlordDefeatedText:
+	text_far _Route10GoatlordDefeatedText
+	text_end
+
+Route10GoatlordVictoryText:
+	text_far _Route10GoatlordVictoryText
+	text_end
+
+Route10GoatlordAfterBattleText:
+	text_far _Route10GoatlordAfterBattleText
 	text_end
 
 Route10RockTunnelSignText:

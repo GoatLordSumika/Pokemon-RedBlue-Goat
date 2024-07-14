@@ -62,6 +62,8 @@ Route2GoatlordIntroScript:
 	bit 0, a
 	ret nz
 	SetEvent EVENT_MET_ROUTE_2_GOATLORD
+	ld a, SPRITE_FACING_RIGHT
+	ld [wSpritePlayerStateData1FacingDirection], a
 	ld a, SELECT | START | D_RIGHT | D_LEFT
 	ld [wJoyIgnore], a
 	ld a, TEXT_ROUTE2_GOATLORD

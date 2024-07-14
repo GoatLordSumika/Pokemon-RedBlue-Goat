@@ -55,3 +55,23 @@ _PokemonTower2FChannelerText::
 	line "might be able to"
 	cont "unmask them."
 	done
+
+_PokemonTower2FGoatlordText::
+	text "GOATLORD SUMIKA:"
+	line "RATTATA."
+	cont "ZUBAT."
+	cont "SPEAROW."
+	cont "BUTTERFREE."
+
+	para "How many of yours"
+	line "have fallen"
+	cont "already?"
+
+	para "Death comes for"
+	line "us all"
+	cont "eventually."
+
+	para "How long can you"
+	line "fight it?"
+	done
+;	line "_________________X"

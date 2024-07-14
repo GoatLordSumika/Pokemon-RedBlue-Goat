@@ -20,6 +20,7 @@ SSAnneBow_TextPointers:
 	dw_const SSAnneBowCooltrainerMText, TEXT_SSANNEBOW_COOLTRAINER_M
 	dw_const SSAnneBowSailor2Text,      TEXT_SSANNEBOW_SAILOR2
 	dw_const SSAnneBowSailor3Text,      TEXT_SSANNEBOW_SAILOR3
+	dw_const SSAnneBowGoatlordText,		TEXT_SSANNEBOW_GOATLORD
 
 SSAnne5TrainerHeaders:
 	def_trainers 4
@@ -75,4 +76,26 @@ SSAnneBowSailor3EndBattleText:
 
 SSAnneBowSailor3AfterBattleText:
 	text_far _SSAnneBowSailor3AfterBattleText
+	text_end
+
+SSAnneBowGoatlordText:
+	text_asm
+	CheckEvent EVENT_GOATLORD_LINKING_CORD
+	jr nz, .eventActive
+	ld hl, SSAnneBowGoatlordEmbarrassedText
+	call PrintText
+	SetEvent EVENT_GOATLORD_LINKING_CORD
+	jr .done
+.eventActive
+	ld hl, SSAnneBowGoatlordPassiveText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+SSAnneBowGoatlordEmbarrassedText:
+	text_far _SSAnneBowGoatlordEmbarrassedText
+	text_end
+
+SSAnneBowGoatlordPassiveText:
+	text_far _SSAnneBowGoatlordPassiveText
 	text_end

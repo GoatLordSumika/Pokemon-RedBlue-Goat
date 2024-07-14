@@ -11,7 +11,7 @@ Route4_Script:
 Route4ResetScript:
 	xor a
 	ld [wJoyIgnore], a
-	ld [wRocketHideoutB4FCurScript], a
+	ld [wRoute4CurScript], a
 	ld [wCurMapScript], a
 	ret
 

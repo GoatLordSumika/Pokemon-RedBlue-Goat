@@ -204,8 +204,9 @@ _CeruleanCitySuperNerd3Text::
 	done
 
 _CeruleanCityGoatlordDefaultText::
-	text "I have seen many"
-	line "people forsake a"
+	text "GOATLORD SUMIKA:"
+	line "I have seen many"
+	cont "people forsake a"
 	cont "bright future by"
 	cont "giving up"
 	cont "everything in"
@@ -231,8 +232,9 @@ _CeruleanCityGoatlordDefaultText::
 	done 
 
 _CeruleanCityGoatlordMewtwoNotBeatText::
-	text "<PLAYER>..."
-	line "Or should I call"
+	text "GOATLORD SUMIKA:"
+	line "<PLAYER>..."
+	cont "Or should I call"
 	cont "you CHAMPION?"
 
 	para "Many trainers"
@@ -270,8 +272,9 @@ _CeruleanCityGoatlordMewtwoNotBeatText::
 	done
 
 _CeruleanCityGoatlordBeforeBattleText::
-	text "<PLAYER>."
-	line "CHAMPION."
+	text "GOATLORD SUMIKA:"
+	line "<PLAYER>."
+	cont "CHAMPION."
 	cont "There are no more"
 	cont "tasks or quests."
 	cont "No more errands."

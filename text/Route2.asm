@@ -83,8 +83,6 @@ _Route2GoatlordRejectedBattleText::
 	line "waiting..."
 	done
 
-;	line "_________________X"
-
 _Route2SignText::
 	text "ROUTE 2"
 	line "VIRIDIAN CITY -"
