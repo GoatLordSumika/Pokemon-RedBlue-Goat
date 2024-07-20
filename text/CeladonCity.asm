@@ -1,3 +1,23 @@
+_CeladonCitySuperNerdText::
+	text "Do you know about"
+	line "The TM SOCIETY?"
+
+	para "They travel the"
+	line "world, collecting"
+	cont "rare TMs."
+
+	para "Then they sell"
+	line "any extras they"
+	cont "find to fund"
+	cont "their travels."
+
+	para "I hear that"
+	line "they're staying"
+	cont "at the CELADON"
+	cont "HOTEL right now!" 
+;	line "_________________X"
+
+
 _CeladonCityLittleGirlText::
 	text "I got my KOFFING"
 	line "in CINNABAR!"

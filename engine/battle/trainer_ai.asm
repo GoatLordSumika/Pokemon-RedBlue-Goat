@@ -413,6 +413,14 @@ Rival3AI:
 	ret nc
 	jp AIUseFullRestore
 
+GoatlordAI:
+	cp 30 percent - 1
+	ret nc
+	ld a, 5
+	call AICheckIfHPBelowFraction
+	ret nc
+	jp AIUseFullRestore
+
 LoreleiAI:
 	cp 50 percent + 1
 	ret nc

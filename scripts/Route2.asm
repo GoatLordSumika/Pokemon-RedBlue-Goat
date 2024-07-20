@@ -73,6 +73,8 @@ Route2GoatlordIntroScript:
 
 Route2GoatlordBeginBattleScript:
 ;	SetEvent EVENT_SET_FINAL_BATTLE_MUSIC
+	xor a
+	ld [wJoyIgnore], a
 	ld hl, wd72d
 	set 6, [hl]
 	set 7, [hl]

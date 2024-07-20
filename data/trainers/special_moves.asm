@@ -231,13 +231,6 @@ SpecialTrainerMoves:
 	db 0
 
 ;Route 8
-	db LASS, 13
-	;NIDORINA
-	db 2, 1, BODY_SLAM
-	db 2, 2, BODY_SLAM
-	db 2, 4, BODY_SLAM
-	db 0
-
 	db LASS, 16
 	;JIGGLYPUFF
 	db 1, 2, WATER_GUN
@@ -350,7 +343,7 @@ SpecialTrainerMoves:
 	db 2, 3, MEGA_DRAIN
 	;BELLSPROUT
 	db 3, 1, MEGA_DRAIN
-	db 3, 2, 
+	db 3, 2, GROWTH
 	;ODDISH
 	db 4, 2, MEGA_DRAIN
 	db 0
@@ -376,6 +369,30 @@ SpecialTrainerMoves:
 	db 3, 3, MEGA_DRAIN
 	;PARASECT
 	db 4, 4, MEGA_DRAIN
+	db 0
+
+;Pokemon Tower
+	db ROCKET, 19
+	;NIDORINO
+	db 1, 4, BODY_SLAM
+	;GOLBAT
+	db 4, 3, LEECH_LIFE
+	db 0
+
+	db ROCKET, 20
+	;ONIX
+	db 1, 2, DIG
+	db 0
+
+	db ROCKET, 21
+	;JOLTEON
+	db 1, 3, THUNDERBOLT
+	;ARBOK
+	db 2, 1, WRAP
+	;GOLBAT
+	db 3, 3, LEECH_LIFE
+	;RATICATE
+	db 4, 4, TACKLE
 	db 0
 
 	db BROCK, 1

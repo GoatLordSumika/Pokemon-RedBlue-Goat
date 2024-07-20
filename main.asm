@@ -103,14 +103,15 @@ SECTION "Battle Engine 2", ROMX
 INCLUDE "engine/gfx/load_pokedex_tiles.asm"
 INCLUDE "engine/overworld/map_sprites.asm"
 INCLUDE "engine/overworld/emotion_bubbles.asm"
-INCLUDE "engine/events/evolve_trade.asm"
-INCLUDE "engine/battle/move_effects/substitute.asm"
-INCLUDE "engine/menus/pc.asm"
+
 
 
 SECTION "Play Time", ROMX
 
 INCLUDE "engine/play_time.asm"
+INCLUDE "engine/events/evolve_trade.asm"
+INCLUDE "engine/battle/move_effects/substitute.asm"
+INCLUDE "engine/menus/pc.asm"
 
 
 SECTION "Doors and Ledges", ROMX
@@ -186,15 +187,12 @@ SECTION "Battle Engine 7", ROMX
 INCLUDE "data/moves/moves.asm"
 INCLUDE "data/pokemon/base_stats.asm"
 INCLUDE "data/pokemon/cries.asm"
-;INCLUDE "engine/battle/unused_stats_functions.asm"
+INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
 INCLUDE "gfx/trade.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
-INCLUDE "engine/battle/move_effects/transform.asm"
-INCLUDE "engine/battle/move_effects/reflect_light_screen.asm"
-INCLUDE "engine/battle/move_effects/heal.asm"
 
 SECTION "Battle Core", ROMX
 
@@ -235,7 +233,9 @@ SECTION "Battle Engine 8", ROMX
 
 INCLUDE "engine/battle/init_battle_variables.asm"
 INCLUDE "engine/battle/move_effects/paralyze.asm"
-
+INCLUDE "engine/battle/move_effects/heal.asm" ;Moved from Battle Engine 7
+INCLUDE "engine/battle/move_effects/reflect_light_screen.asm" ;Moved from Battle Engine 7
+INCLUDE "engine/battle/move_effects/transform.asm"
 
 SECTION "Hidden Objects 2", ROMX
 
@@ -352,3 +352,5 @@ INCLUDE "data/battle_anims/frame_blocks.asm"
 INCLUDE "engine/movie/evolution.asm"
 INCLUDE "engine/overworld/elevator.asm"
 INCLUDE "engine/items/tm_prices.asm"
+
+SECTION "Battle Engine 12", ROMX

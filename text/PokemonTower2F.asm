@@ -58,10 +58,11 @@ _PokemonTower2FChannelerText::
 
 _PokemonTower2FGoatlordText::
 	text "GOATLORD SUMIKA:"
-	line "RATTATA."
-	cont "ZUBAT."
-	cont "SPEAROW."
-	cont "BUTTERFREE."
+	line "RATTATA"
+	cont "ZUBAT"
+	cont "SPEAROW"
+	cont "BUTTERFREE"
+	cont "DUGTRIO"
 
 	para "How many of yours"
 	line "have fallen"

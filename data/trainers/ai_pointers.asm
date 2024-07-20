@@ -16,7 +16,7 @@ TrainerAIPointers:
 	dbw 3, GenericAI
 	dbw 3, GenericAI
 	dbw 3, GenericAI
-	dbw 2, Rival3AI ; Goatlord
+	dbw 2, GoatlordAI ; Goatlord
 	dbw 3, GenericAI
 	dbw 3, GenericAI
 	dbw 3, GenericAI
