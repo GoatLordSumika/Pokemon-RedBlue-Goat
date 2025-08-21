@@ -19,6 +19,7 @@ _CeladonCitySuperNerdText::
 ;	line "_________________X"
 
 
+
 _CeladonCityLittleGirlText::
 	text "I got my KOFFING"
 	line "in CINNABAR!"
