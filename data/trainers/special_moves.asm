@@ -202,7 +202,7 @@ SpecialTrainerMoves:
 	db 2, 2, SWIFT
 	db 0
 
-;Route 12
+;Route 12 (Before SNORLAX)
 	db FISHER, 3
 	;GOLDEEN
 	db 1, 2, WATER_GUN
@@ -395,6 +395,497 @@ SpecialTrainerMoves:
 	db 4, 4, TACKLE
 	db 0
 
+;Route 12 (After SNORLAX)
+	db JR_TRAINER_M, 9
+	;NIDORINO
+	db 1, 4, BODY_SLAM
+	;FLAREON
+	db 2, 1, TAKE_DOWN
+	;SLOWPOKE
+	db 3, 4, WATER_GUN
+	db 0
+
+	db ROCKER, 2
+	;PSYDUCK
+	db 2, 4, WATER_GUN
+	;MAGNETON
+	db 3, 1, THUNDERBOLT
+	db 0
+
+;Route 13
+	db JR_TRAINER_F, 12
+	;PIDGEOTTO
+	db 1, 4, FLY
+	;NIDORINA
+	db 1, 1, BODY_SLAM
+	;VAPOREON
+	db 5, 1, BUBBLEBEAM
+	;GLOOM
+	db 6, 2, MEGA_DRAIN
+	db 0
+	
+	db JR_TRAINER_F, 13
+	;BUTTERFREE
+	db 2, 3, MEGA_DRAIN
+	;VULPIX
+	db 3, 1, DIG
+	db 3, 3, EMBER
+	db 0
+
+	db JR_TRAINER_F, 14
+	;WEEPINBELL
+	db 1, 1, MEGA_DRAIN
+	db 1, 2, WRAP
+	;WIGGLYTUFF
+	db 2, 3, TAKE_DOWN
+	db 2, 4, THUNDERBOLT
+	;CHARMELEON
+	db 5, 1, CUT
+	db 0
+
+	db JR_TRAINER_F, 15
+	;EXEGGCUTE
+	db 1, 1, EGG_BOMB
+	;SEADRA
+	db 1, 1, BUBBLEBEAM
+	;PIDGEOTTO
+	db 3, 4, FLY
+	;GRAVELER
+	db 4, 1, TACKLE
+	db 4, 3, MEGA_PUNCH
+	db 4, 4, EARTHQUAKE
+	db 0
+	
+	db BIKER, 1
+	;GRIMER
+	db 2, 4, MEGA_DRAIN
+	;GROWLITHE
+	db 3, 1, DRAGON_RAGE
+	;TANGELA
+	db 4, 1, MEGA_DRAIN
+	db 0
+
+	db BEAUTY, 4
+	;EEVEE
+	db 1, 1, 
+	;PIKACHU
+	db 2, 1, THUNDERBOLT
+	;SEEL
+	db 3, 3, WATER_GUN
+	;CLEFAIRY
+	db 4, 2, POUND
+	db 0
+
+	db BIRD_KEEPER, 1
+	;FARFETCHD
+	db 1, 1, FLY
+	db 1, 2, CUT
+	;PRIMEAPE
+	db 2, 4, MEGA_PUNCH
+	;PIDGEOTTO
+	db 3, 3, FLY
+	db 3, 4, TAKE_DOWN
+	db 0
+
+	db BIRD_KEEPER, 2
+	;PIDGEY
+	db 1, 3, FLY
+	;PIDGEOTTO
+	db 3, 3, FLY
+	;GROWLITHE
+	db 5, 1, BITE
+	;FEAROW
+	db 6, 1, DOUBLE_EDGE
+	db 6, 4, DRILL_PECK
+	db 0
+
+	db BIRD_KEEPER, 3
+	;FARFETCHD
+	db 1, 1, FLY
+	db 1, 2, CUT
+	;PIDGEOTTO
+	db 2, 3, FLY
+	;FEAROW
+	db 3, 1, PECK
+	db 3, 4, FLY
+	;DODRIO
+	db 5, 3, TRI_ATTACK
+	db 0
+
+;Route 14
+	db BIKER, 2
+	;NIDORINO
+	db 1, 1, BUBBLEBEAM
+	db 1, 4, TAKE_DOWN
+	;GOLBAT
+	db 2, 1, MEGA_DRAIN
+	db 0
+
+	db BIKER, 13
+	;KOFFING
+	db 1, 3, SLUDGE
+	;TENTACOOL
+	db 2, 2, ACID
+	db 2, 4, SUPERSONIC
+	;ARBOK
+	db 4, 1, MEGA_DRAIN
+	;HAUNTER
+	db 5, 1, THUNDERBOLT
+	db 0
+
+	db BIKER, 14
+	;GOLBAT
+	db 1, 1, MEGA_DRAIN
+	;IVYSAUR
+	db 2, 2, BODY_SLAM
+	db 0
+
+	db BIKER, 15
+	;GRIMER
+	db 1, 2, MEGA_DRAIN
+	;RHYHORN
+	db 2, 3, DIG
+	;VENOMOTH
+	db 3, 1, MEGA_DRAIN
+	db 0
+
+	db BIRD_KEEPER, 4
+	;FARFETCHD
+	db 1, 1, FLY
+	db 1, 2, CUT
+	;SANDSLASH
+	db 2, 1, DIG
+	;FEAROW
+	db 3, 1, FLY
+	db 3, 4, DRILL_PECK
+	db 0
+
+	db BIRD_KEEPER, 5
+	;PIDGEOTTO
+	db 1, 3, FLY
+	;GRAVELER
+	db 2, 3, MEGA_PUNCH
+	db 2, 4, SEISMIC_TOSS
+	;FEAROW
+	db 3, 1, FLY
+	db 3, 3, DOUBLE_EDGE
+	db 3, 4, DRILL_PECK
+	db 0
+
+	db BIRD_KEEPER, 14
+	;PIDGEY
+	db 1, 3, FLY
+	;WEEPINBELL
+	db 2, 1, VINE_WHIP
+	db 2, 2, WRAP
+	;DODUO
+	db 3, 1, FLY
+	;PIDGEOTTO
+	db 4, 3, FLY
+	db 0
+
+	db BIRD_KEEPER, 15
+	;FARFETCHD
+	db 1, 1, FLY
+	db 1, 2, CUT
+	;PIDGEOTTO
+	db 2, 3, FLY
+	;SPEAROW
+	db 3, 3, FLY
+	;DODRIO
+	db 5, 1, FLY
+	db 5, 3, TRI_ATTACK
+	db 0
+
+	db BIRD_KEEPER, 16
+	;PIDGEOTTO
+	db 1, 3, FLY
+	;EXEGGCUTE
+	db 2, 2, MEGA_DRAIN
+	;DODRIO
+	db 5, 1, FLY
+	db 5, 3, TAKE_DOWN
+	db 0
+
+	db BIRD_KEEPER, 17
+	;PIDGEY
+	db 1, 3, FLY
+	;DODUO
+	db 2, 1, FLY
+	;VULPIX
+	db 3, 3, EMBER
+	;FEAROW
+	db 4, 1, FLY
+	db 4, 3, DOUBLE_EDGE
+	db 4, 4, DRILL_PECK
+	db 0
+
+;Route 15
+	db JR_TRAINER_F, 20
+	;MR_MIME
+	db 4, 5, THUNDERBOLT
+	;VILEPLUME
+	db 5, 1, MEGA_DRAIN
+	db 5, 2, ACID
+	db 0
+
+	db JR_TRAINER_F, 21
+	;VAPOREON
+	db 1, 1, BUBBLEBEAM
+	;RAICHU
+	db 2, 2, QUICK_ATTACK
+	db 2, 4, THUNDERBOLT
+	db MAROWAK
+	db 3, 3, MEGA_PUNCH
+	db 0
+
+	db JR_TRAINER_F, 22
+	;CLEFABLE
+	db 2, 2, MEGA_PUNCH
+	db 2, 4, ICE_BEAM
+	db 0
+
+	db JR_TRAINER_F, 23
+	;MACHOKE
+	db 1, 4, DIG
+	;SEAKING
+	db 3, 1, PECK
+	db 3, 4, WATER_GUN
+	;WEEPINBELL
+	db 4, 1, MEGA_DRAIN
+	db 4, 3, GROWTH
+	db 0
+
+	db BIKER, 3
+	;GRIMER
+	db 1, 2, MEGA_DRAIN
+	;CHARMELEON
+	db 2, 2, DRAGON_RAGE
+	;GOLBAT
+	db 4, 1, MEGA_DRAIN
+	;ARCANINE
+	db 5, 1, BITE
+	;ARBOK
+	db 6, 1, WRAP
+	db 6, 2, DIG
+	db 0
+
+	db BIKER, 4
+	;SEEL
+	db 1, 4, WATER_GUN
+	;VULPIX
+	db 2, 3, EMBER
+	;IVYSAUR
+	db 3, 2, BODY_SLAM
+	db 0
+
+	db BEAUTY, 9
+	;SEEL
+	db 2, 4, WATER_GUN
+	;WIGGLYTUFF
+	db 3, 3, THUNDERBOLT
+	db 3, 4, BODY_SLAM
+	db 0
+
+	db BEAUTY, 10
+	;IVYSAUR
+	db 1, 2, TACKLE
+	;SLOWPOKE
+	db 2, 3, WATER_GUN
+	;CHANSEY
+	db 3, 1, DOUBLE_EDGE
+	db 3, 2, THUNDERBOLT
+	db 3, 4, SOFTBOILED
+	db 0
+
+	db BIRD_KEEPER, 6
+	;FARFETCHD
+	db 1, 1, FLY
+	db 1, 2, CUT
+	;FEAROW
+	db 2, 3, FLY
+	;DODRIO
+	db 3, 1, FLY
+	;PIDGEOT
+	db 4, 1, HYPER_BEAM
+	db 4, 3, REFLECT
+	db 4, 4, FLY
+	db 0
+
+	db BIRD_KEEPER, 7
+	;PIDGEOTTO
+	db 1, 3, FLY
+	;WARTORTLE
+	db 1, 4, ICE_BEAM
+	;FEAROW
+	db 3, 1, FLY
+	;DODRIO
+	db 4, 1, FLY
+	db 4, 3, TAKE_DOWN
+	db 0
+
+;Route 16
+	db BIKER, 5
+	;GRIMER
+	db 1, 4, MEGA_DRAIN
+	;POLIWHIRL
+	db 2, 1, MEGA_PUNCH
+	db 0
+
+	db BIKER, 6
+	;ARBOK
+	db 1, 1, DIG
+	;VULPIX
+	db 2, 3, EMBER
+	db 0
+
+	db BIKER, 7
+	;GRIMER
+	db 1, 3, MEGA_DRAIN
+	;GOLBAT
+	db 2, 1, MEGA_DRAIN
+	db 2, 2, SCREECH
+	;MAGNEMITE
+	db 3, 4, FLASH
+	;BEEDRILL
+	db 4, 1, CUT
+	db 4, 2, MEGA_DRAIN
+	db 0	
+
+	db CUE_BALL, 1
+	;PRIMEAPE
+	db 2, 4, SUBMISSION
+	;HITMONCHAN
+	db 4, 1, MEGA_PUNCH
+	db 0
+
+	db CUE_BALL, 2
+	;MANKEY
+	db 1, 4, DIG
+	db 0
+
+	db CUE_BALL, 3
+	;HITMONLEE
+	db 1, 4, MEGA_KICK
+	;PIKACHU
+	db 2, 1, THUNDERSHOCK
+	db 0
+
+;Route 17
+	db BIKER, 8
+	;GROWLITHE
+	db 1, 1, BITE
+	;GLOOM
+	db 3, 1, MEGA_DRAIN
+	db 0
+	;NIDORINO
+	db 4, 4, BUBBLEBEAM
+
+	db BIKER, 9
+	;VENOMOTH
+	db 1, 1, MEGA_DRAIN
+	; WEEPINBELL
+	db 2, 1, VINE_WHIP
+	db 2, 3, GROWTH
+	db 0
+
+	db BIKER, 10
+	;SEAKING
+	db 2, 1, PECK
+	db 2, 4, WATER_GUN
+	;ELECTRODE
+	db 3, 1, TACKLE
+	db 3, 3, THUNDERBOLT
+	db 0
+
+	db BIKER, 11
+	;GRIMER
+	db 1, 4, MEGA_DRAIN
+	;SCYTHER
+	db 2, 2, QUICK_ATTACK
+	;NIDORINA
+	db 3, 1, TAKE_DOWN
+	db 0
+
+	db BIKER, 12
+	;GRIMER
+	db 2, 4, MEGA_DRAIN
+	;TENTACOOL
+	db 3, 2, ACID
+	db 3, 4, SUPERSONIC
+	;GOLBAT
+	db 4, 1, MEGA_DRAIN
+	db 4, 2, SCREECH
+	;ARBOK
+	db 6, 1, DIG
+	db 0
+
+	db CUE_BALL, 4
+	;MACHOP
+	db 1, 4, LOW_KICK
+	;ELECTRODE
+	db 2, 1, THUNDERBOLT
+	db 2, 3, THUNDER_WAVE
+	;PRIMEAPE
+	db 3, 4, MEGA_PUNCH
+	db 0
+
+	db CUE_BALL, 5
+	;MANKEY
+	db 1, 4, MEGA_PUNCH
+	;MACHOKE
+	db 3, 4, DIG
+	db 0
+
+	db CUE_BALL, 6
+	;HITMONCHAN
+	db 1, 4, SUBMISSION
+	;LAPRAS
+	db 2, 2, WATER_GUN
+	db 0
+
+	db CUE_BALL, 7
+	;PRIMEAPE
+	db 1, 4, SCRATCH
+	;POLIWRATH
+	db 4, 2, BUBBLEBEAM
+	db 4, 3, SUBMISSION
+	db 0
+
+	db CUE_BALL, 8
+	;GRAVELER
+	db 2, 3, MEGA_PUNCH
+	db 2, 4, DIG
+	db 0
+
+;Route 18
+	db BIRD_KEEPER, 8
+	;PIDGEOTTO
+	db 1, 3, FLY
+	;GRAVELER
+	db 2, 3, MEGA_PUNCH
+	db 2, 4, TACKLE
+	;FEAROW
+	db 3, 1, FLY
+	db 3, 3, TAKE_DOWN
+	db 0
+
+	db BIRD_KEEPER, 9
+	;DODRIO
+	db 1, 3, BODY_SLAM
+	db 0
+	;FEAROW
+	db 4, 1, FLY
+	db 4, 3, TAKE_DOWN
+	;PIDGEOTTO
+	db 1, 3, FLY
+	db 0
+
+	db BIRD_KEEPER, 10
+	;FARFETCHD
+	db 1, 1, FLY
+
+
 	db BROCK, 1
 	db 2, 3, BIDE
 	db 0
@@ -430,19 +921,25 @@ SpecialTrainerMoves:
 	db 0
 
 	db KOGA, 1
+	;GOLBAT
 	db 1, 4, TOXIC
+	;ARBOK
 	db 2, 1, TOXIC
 	db 2, 3, ROCK_SLIDE
 	db 2, 4, DIG
+	;VENOMOTH
 	db 3, 1, TOXIC
 	db 3, 2, MEGA_DRAIN
 	db 3, 4, PSYBEAM
+	;TENTACRUEL
 	db 4, 1, ACID
 	db 4, 2, BUBBLEBEAM
 	db 4, 3, SUPERSONIC
 	db 4, 4, TOXIC
+	;MUK
 	db 5, 1, TOXIC
 	db 5, 2, BODY_SLAM
+	;WEEZING
 	db 6, 1, TOXIC
 	db 6, 3, THUNDERBOLT
 	db 0
@@ -700,6 +1197,8 @@ SpecialTrainerMoves:
 	;Mew
 	db 6, 1, FLAMETHROWER
 	db 6, 2, SURF
-	db 6, 3, BLIZZARD 
+	db 6, 3, BLIZZARD
+	db 6, 4, PSYCHIC_M
+	db 0
 
 	db -1 ; end

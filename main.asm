@@ -191,7 +191,6 @@ INCLUDE "engine/battle/unused_stats_functions.asm"
 INCLUDE "engine/battle/scroll_draw_trainer_pic.asm"
 INCLUDE "engine/battle/trainer_ai.asm"
 INCLUDE "engine/battle/draw_hud_pokeball_gfx.asm"
-INCLUDE "gfx/trade.asm"
 INCLUDE "engine/pokemon/evos_moves.asm"
 
 SECTION "Battle Core", ROMX
@@ -233,9 +232,10 @@ SECTION "Battle Engine 8", ROMX
 
 INCLUDE "engine/battle/init_battle_variables.asm"
 INCLUDE "engine/battle/move_effects/paralyze.asm"
-INCLUDE "engine/battle/move_effects/heal.asm" ;Moved from Battle Engine 7
+INCLUDE "gfx/trade.asm"                                       ;Moved from Battle Engine 7
+INCLUDE "engine/battle/move_effects/heal.asm"                 ;Moved from Battle Engine 7
 INCLUDE "engine/battle/move_effects/reflect_light_screen.asm" ;Moved from Battle Engine 7
-INCLUDE "engine/battle/move_effects/transform.asm"
+INCLUDE "engine/battle/move_effects/transform.asm"            ;Moved from Battle Engine 7
 
 SECTION "Hidden Objects 2", ROMX
 

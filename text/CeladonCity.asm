@@ -15,6 +15,7 @@ _CeladonCitySuperNerdText::
 	line "they're staying"
 	cont "at the CELADON"
 	cont "HOTEL right now!" 
+	done
 ;	line "_________________X"
 
 
