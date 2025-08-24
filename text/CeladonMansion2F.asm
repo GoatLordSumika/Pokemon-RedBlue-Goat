@@ -12,9 +12,10 @@ _CeladonMansion2GoatlordDefaultText::
 	cont "else to evolve."
 
 	para "The fools"
-	line "upstairs at GAME"
-	cont "FREAK apparently"
-	cont "thinks that's a"
+	line "upstairs at"
+	line "GAME FREAK "
+	cont "apparently thinks"
+	cont "that's a"
 	cont "reasonable"
 	cont "requirement."
 

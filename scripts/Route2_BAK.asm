@@ -12,7 +12,7 @@ Route2ResetScript:
 Route2_ScriptPointers:
 	def_script_pointers
 	dw_const Route2DefaultScript, 				SCRIPT_ROUTE2_DEFAULT
-	;dw_const Route2GoatlordMovesToPlayerScript,	SCRIPT_ROUTE2_GOATLORD_MOVES_TO_PLAYER
+	dw_const Route2GoatlordMovesToPlayerScript,	SCRIPT_ROUTE2_GOATLORD_MOVES_TO_PLAYER
 	dw_const Route2GoatlordIntroScript,			SCRIPT_ROUTE2_GOATLORD_INTRO
 	dw_const Route2GoatlordBeginBattleScript,	SCRIPT_ROUTE2_GOATLORD_BEGIN_BATTLE
 	dw_const Route2GoatlordDefeatedScript,		SCRIPT_ROUTE2_GOATLORD_DEFEATED
@@ -26,24 +26,29 @@ Route2DefaultScript:
 	ld hl, Route2GoatlordEncounterEventCoords
 	call ArePlayerCoordsInArray
 	ret nc
-	xor a
-	ld [wOakWalkedToPlayer], a ;Reused RAM location from Pallet Town Oak script
-	ldh [hJoyHeld], a
-	ld a, SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
-	ld [wJoyIgnore], a
 	ld a, SFX_STOP_ALL_MUSIC
 	ld [wNewSoundID], a
 	call PlaySound
 	ld c, BANK(Music_IndigoPlateau)
 	ld a, MUSIC_INDIGO_PLATEAU
 	call PlayMusic
+	ld a, SELECT | START | D_RIGHT | D_LEFT | D_UP | D_DOWN
+	ld [wJoyIgnore], a
 	ld a, TEXT_ROUTE2_GOATLORD
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	ld a, HS_ROUTE_2_GOATLORD
 	ld [wMissableObjectIndex], a
 	predef ShowObject
-	;ld a, SCRIPT_ROUTE2_GOATLORD_MOVES_TO_PLAYER
+	ld a, SCRIPT_ROUTE2_GOATLORD_MOVES_TO_PLAYER
+	ld [wRoute2CurScript], a
+	ret
+
+Route2GoatlordEncounterEventCoords:
+	dbmapcoord 3, 9
+	db -1 ; end
+
+Route2GoatlordMovesToPlayerScript:
 	ld de, Route2GoatlordArrivesMovement
 	ld a, ROUTE2_GOATLORD
 	ldh [hSpriteIndex], a
@@ -52,29 +57,20 @@ Route2DefaultScript:
 	ld [wRoute2CurScript], a
 	ret
 
-Route2GoatlordEncounterEventCoords:
-	dbmapcoord 3, 9
-	db -1 ; end
-
-;Route2GoatlordMovesToPlayerScript:
-;	ld de, Route2GoatlordArrivesMovement
-;	ld a, ROUTE2_GOATLORD
-;	ldh [hSpriteIndex], a
-;	call MoveSprite
-;	ld a, SCRIPT_ROUTE2_GOATLORD_INTRO
-;	ld [wRoute2CurScript], a
-;	ret
-
 Route2GoatlordIntroScript:
 	ld a, [wd730]
 	bit 0, a
 	ret nz
-	ld a, SPRITE_FACING_RIGHT
-	ld [wSpritePlayerStateData1FacingDirection], a
-	ld a, TRUE
-	ld [wOakWalkedToPlayer], a ;Reused RAM location from Pallet Town Oak script
+	ld a, SPRITE_FACING_DOWN
+	ldh [hSpriteFacingDirection], a
+	ld a, ROUTE2_GOATLORD
+	ldh [hSpriteIndex], a
+	call SetSpriteFacingDirection
+	SetEvent EVENT_MET_ROUTE_2_GOATLORD
 	ld a, SELECT | START | D_RIGHT | D_LEFT
 	ld [wJoyIgnore], a
+	;ld a, PLAYER_DIR_RIGHT
+	;ld [wPlayerMovingDirection], a
 	ld a, TEXT_ROUTE2_GOATLORD
 	ldh [hSpriteIndexOrTextID], a
 	call DisplayTextID
@@ -82,11 +78,6 @@ Route2GoatlordIntroScript:
 
 Route2GoatlordBeginBattleScript:
 	SetEvent EVENT_SET_FINAL_BATTLE_MUSIC
-	ld a, SPRITE_FACING_LEFT
-	ldh [hSpriteFacingDirection], a
-	ld a, ROUTE2_GOATLORD
-	ldh [hSpriteIndex], a
-	call SetSpriteFacingDirectionAndDelay
 	xor a
 	ld [wJoyIgnore], a
 	ld hl, wd72d
@@ -192,26 +183,21 @@ Route2PlayerMovement:
 
 Route2_TextPointers:
 	def_text_pointers
-	dw_const Route2GoatlordText,		 	TEXT_ROUTE2_GOATLORD
-	;dw_const Route2GoatlordLeaveQuestion	TEXT_ROUTE2_GOATLORD_LEAVE_QUESTION
-	dw_const PickUpItemText,             	TEXT_ROUTE2_MOON_STONE
-	dw_const PickUpItemText,             	TEXT_ROUTE2_HP_UP
-	dw_const Route2SignText,            	TEXT_ROUTE2_SIGN
-	dw_const Route2DiglettsCaveSignText, 	TEXT_ROUTE2_DIGLETTS_CAVE_SIGN
+	dw_const Route2GoatlordText,		 TEXT_ROUTE2_GOATLORD
+	dw_const PickUpItemText,             TEXT_ROUTE2_MOON_STONE
+	dw_const PickUpItemText,             TEXT_ROUTE2_HP_UP
+	dw_const Route2SignText,             TEXT_ROUTE2_SIGN
+	dw_const Route2DiglettsCaveSignText, TEXT_ROUTE2_DIGLETTS_CAVE_SIGN
 
 Route2GoatlordText:
 	text_asm
+	CheckEvent EVENT_MET_ROUTE_2_GOATLORD
+	jr z, .callout
 	CheckEvent EVENT_BEAT_ROUTE_2_GOATLORD
-	jr z, .beginEvent
-	;CheckEvent EVENT_MET_ROUTE_2_GOATLORD
-	;jr z, .callout
+	jr z, .intro
 	ld hl, GoatlordAfterBattleText
 	call PrintText
 	jr .done
-.beginEvent
-	ld a, [wOakWalkedToPlayer] ;Reused RAM location from Pallet Town Oak script
-	and a
-	jr nz, .intro
 .callout
 	ld hl, HeyYouText
 	call PrintText
@@ -226,14 +212,15 @@ Route2GoatlordText:
 	ld hl, GoatlordBeforeBattleText
 	call PrintText
 	ld a, SCRIPT_ROUTE2_GOATLORD_BEGIN_BATTLE
-	ld [wRoute2CurScript], a
+;	ld [wRoute2CurScript], a
 	jr .done
 .answerNo
 	ld hl, GoatlordRejectedBattleText
 	call PrintText
 	ld a, SCRIPT_ROUTE2_REJECTED_BATTLE
-	ld [wRoute2CurScript], a
+;	ld [wRoute2CurScript], a
 .done
+	ld [wRoute2CurScript], a
 	jp TextScriptEnd
 
 HeyYouText:

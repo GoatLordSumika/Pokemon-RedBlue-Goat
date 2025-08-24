@@ -310,7 +310,6 @@ GoatlordData:
 ; Route 10
 	db $FF, 19, MEOWTH, 19, DIGLETT, 21, IVYSAUR, 22, KADABRA, 24, NIDOQUEEN, 24, GYARADOS, 0
 ;Cerulean City - Final Battle
-;	db 10, MEW, 0
 	db $FF, 66, STARMIE, 67, TAUROS, 68, VENUSAUR, 69, ALAKAZAM, 70, ZAPDOS, 70, MEW, 0
 
 FisherData:

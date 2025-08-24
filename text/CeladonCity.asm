@@ -16,9 +16,6 @@ _CeladonCitySuperNerdText::
 	cont "at the CELADON"
 	cont "HOTEL right now!" 
 	done
-;	line "_________________X"
-
-
 
 _CeladonCityLittleGirlText::
 	text "I got my KOFFING"

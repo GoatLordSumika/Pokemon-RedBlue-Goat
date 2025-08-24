@@ -873,7 +873,6 @@ SpecialTrainerMoves:
 	db BIRD_KEEPER, 9
 	;DODRIO
 	db 1, 3, BODY_SLAM
-	db 0
 	;FEAROW
 	db 4, 1, FLY
 	db 4, 3, TAKE_DOWN
@@ -884,7 +883,7 @@ SpecialTrainerMoves:
 	db BIRD_KEEPER, 10
 	;FARFETCHD
 	db 1, 1, FLY
-
+	db 0
 
 	db BROCK, 1
 	db 2, 3, BIDE
@@ -1061,7 +1060,7 @@ SpecialTrainerMoves:
 	;RATICATE
 	db 2, 1, DIG
 	;KADABRA
-	db 3, 1, 
+	db 3, 1, THUNDER_WAVE
 	;WARTORTLE
 	db 4, 1, BODY_SLAM
 	db 4, 3, BUBBLEBEAM

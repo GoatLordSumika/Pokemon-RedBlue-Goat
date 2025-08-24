@@ -17,18 +17,8 @@ DebugNewGameParty: ; unreferenced except in _DEBUG
 	; "Tsunekazu Ishihara: Exeggutor is my favorite. That's because I was
 	; always using this character while I was debugging the program."
 	; From https://web.archive.org/web/20000607152840/http://pocket.ign.com/news/14973.html
-	db EXEGGUTOR, 90
-IF DEF(_DEBUG)
-	db MEW, 5
-ELSE
-	db MEW, 20
-ENDC
-	db JOLTEON, 56
-	db DUGTRIO, 56
-	db ARTICUNO, 57
-IF DEF(_DEBUG)
-	db PIKACHU, 5
-ENDC
+	db MEWTWO, 100
+	db MEW, 100
 	db -1 ; end
 
 PrepareNewGameDebug: ; dummy except in _DEBUG
@@ -49,6 +39,23 @@ IF DEF(_DEBUG)
 
 	; Exeggutor gets four HM moves.
 	ld hl, wPartyMon1Moves
+	ld a, PSYCHIC_M
+	ld [hli], a
+	ld a, ICE_BEAM
+	ld [hli], a
+	ld a, FLAMETHROWER
+	ld [hli], a
+	ld a, THUNDERBOLT
+	ld [hl], a
+	ld hl, wPartyMon1PP
+	ld a, 10
+	ld [hli], a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+
+	; Mew gets HMs.
+	ld hl, wPartyMon2Moves
 	ld a, FLY
 	ld [hli], a
 	ld a, CUT
@@ -57,37 +64,11 @@ IF DEF(_DEBUG)
 	ld [hli], a
 	ld a, STRENGTH
 	ld [hl], a
-	ld hl, wPartyMon1PP
-	ld a, 15
+	ld hl, wPartyMon2PP
+	ld a, 10
 	ld [hli], a
-	ld a, 30
 	ld [hli], a
-	ld a, 15
 	ld [hli], a
-	ld [hl], a
-
-	; Jolteon gets Thunderbolt.
-	ld hl, wPartyMon3Moves + 3
-	ld a, THUNDERBOLT
-	ld [hl], a
-	ld hl, wPartyMon3PP + 3
-	ld a, 15
-	ld [hl], a
-
-	; Articuno gets Fly.
-	ld hl, wPartyMon5Moves
-	ld a, FLY
-	ld [hl], a
-	ld hl, wPartyMon5PP
-	ld a, 15
-	ld [hl], a
-
-	; Pikachu gets Surf.
-	ld hl, wPartyMon6Moves + 2
-	ld a, SURF
-	ld [hl], a
-	ld hl, wPartyMon6PP + 2
-	ld a, 15
 	ld [hl], a
 
 	; Get some debug items.

@@ -5,21 +5,21 @@ _Route2GoatlordCalloutText::
 
 _Route2GoatlordIntroText::
 	text "You made it"
-	line "through"
-	cont "the forest."
+	line "through the"
+	cont "forest."
 
-	para "PEWTER CITY is"
-	line "almost within"
-	cont "your reach."
+	para "PEWTER CITY lies"
+	line "just beyond."
 
 	para "However..."
-	line "Before I let"
-	cont "you pass, you"
-	cont "need to prove"
-	cont "yourself to me."
+
+	para "Before I let you"
+	line "pass, you need to"
+	cont "prove yourself to"
+	cont "me."
 
 	para "Are you ready"
-	line "to fight?"
+	line "to battle?"
 	done
 
 _Route2GoatlordBeforeBattleText::
@@ -40,30 +40,34 @@ _Route2GoatlordVictoryText::
 	prompt
 
 _Route2GoatlordAfterBattleText::
-	text "Don't get ahead"
-	line "of yourself!"
+	text "Don't get ahead of"
+	line "yourself TRAINER."
 
-	para "That display is"
-	line "not yet something"
-	cont "to be proud of."
+	para "That display of"
+	line "skill was barely"
+	cont "adequate."
 
-	para "You've just"
-	line "barely managed to"
-	cont "show the tiniest"
-	cont "bit of potential."
+	para "You’ve only seen" 
+	line "a tiny bit of my"
+	cont "true power."
 
-	para "If you nurture"
-	line "that, then it"
-	cont "might grow into"
-	cont "something"
-	cont "worthwhile."
-	cont "Eventually..."
-	
-	para "Move along now"
-	line "TRAINER."
-	
-	para "We will be"
-	line "watching you!"
+	para "It would be such" 
+	line "a shame if I were"
+	cont "to break you this"
+	cont "early."
+
+	para "Still, you have"
+	line "managed not to be"
+	cont "completely" 
+	cont "incompetent and" 
+	cont "as a reward you" 
+	cont "may proceed."
+
+	para "Should you" 
+	line "accidentally" 
+	cont "develop some" 
+	cont "actual skill, we" 
+	cont "may meet again."
 	done
 
 _Route2GoatlordRejectedBattleText::
